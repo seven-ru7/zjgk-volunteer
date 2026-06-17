@@ -189,7 +189,7 @@ def main():
     print(result.stdout)
 
     # 2. 读状态
-    status_path = ROOT / "data/_crawled/2026_check_status.json"
+    status_path = ROOT / "data/2026_check_status.json"
     if not status_path.exists():
         print("❌ 检查脚本未生成状态文件")
         return 1

@@ -123,8 +123,8 @@ def main():
     else:
         print("⏳ 二段分数段表: 未发布（预计 7/底）")
 
-    # 保存结果
-    out = pathlib.Path("data/_crawled/2026_check_status.json")
+    # 保存结果（保存到 data/ 根目录，以便 git 跟踪 + Streamlit Cloud 可见）
+    out = pathlib.Path("data/2026_check_status.json")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps({
         "check_time": datetime.now().isoformat(),

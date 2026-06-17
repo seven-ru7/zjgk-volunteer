@@ -86,7 +86,7 @@ else:
     )
 
 # 2026 数据待发布提示
-status_path = Path("data/_crawled/2026_check_status.json")
+status_path = Path("data/2026_check_status.json")
 if status_path.exists():
     try:
         status = json.loads(status_path.read_text(encoding="utf-8"))
