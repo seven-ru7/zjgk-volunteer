@@ -195,11 +195,69 @@ package.bat
 
 ### 方式 C：部署到云端（适合大规模 / 远程访问）
 
-#### C1. Streamlit Cloud（免费，最简单）
-1. 把项目 push 到 GitHub
-2. 访问 https://share.streamlit.io 连接 GitHub
-3. 选择 `app.py` 一键部署
-4. ⚠ 中国大陆访问较慢
+#### C1. Streamlit Cloud（免费，最简单）⭐ 推荐
+
+**5 步部署（约 10 分钟）：**
+
+1. **创建 GitHub 仓库**
+   - 访问 https://github.com/new
+   - Repository name: `zjgk-volunteer`
+   - Public（Streamlit Cloud 免费版要求）
+   - ❌ 不要勾选任何初始化选项（用本地已有文件）
+
+2. **推送代码到 GitHub**
+   ```bash
+   cd "D:/Users/LLM Wiki/Workspace/zjgk-volunteer"
+   # 编辑 scripts/deploy.py 填入你的 GitHub 用户名
+   python scripts/deploy.py
+   ```
+   或手动：
+   ```bash
+   git remote add origin https://github.com/你的用户名/zjgk-volunteer.git
+   git push -u origin main
+   ```
+   - 推送时需要 GitHub 凭据（推荐用 Personal Access Token）
+   - 获取 Token: https://github.com/settings/tokens → Generate new token → 勾选 `repo`
+
+3. **登录 Streamlit Cloud**
+   - 访问 https://share.streamlit.io/
+   - 用 GitHub 账号登录
+   - 授权访问 `zjgk-volunteer` 仓库
+
+4. **创建 App**
+   - 点击 "New app"
+   - Repository: `你的用户名/zjgk-volunteer`
+   - Branch: `main`
+   - Main file path: `app.py`
+   - App URL: 自定义（如 `zjgk-volunteer`）
+   - 点击 "Deploy!"
+
+5. **等待构建（3-5 分钟）**
+   - 日志会显示 pip install 进度
+   - 成功后获得 URL：`https://zjgk-volunteer.streamlit.app`
+   - 任何人都能通过这个 URL 访问！
+
+**配置已就位**（无需手动设置）：
+- ✅ `.python-version` 锁定 Python 3.11
+- ✅ `requirements.txt` 列出所有依赖
+- ✅ `app.py` 是入口文件
+- ✅ 数据文件已包含在仓库
+- ✅ `.streamlit/config.toml` 配置主题
+
+**部署后如果失败**：
+- 查看 Logs（多半是依赖或路径问题）
+- 我的 `.python-version` 已锁定 Python 3.11
+- 常见问题：网络超时 → 重试即可
+
+**优点**：
+- 永久免费（Streamlit 公共 app）
+- 自动 HTTPS
+- 每次 push 自动重新部署
+- 资源限制：1 CPU / 800 MB RAM（足够本系统使用）
+
+⚠ **限制**：
+- 中国大陆访问较慢（建议国内用户用 C2）
+- 资源限制 800MB RAM
 
 #### C2. 阿里云 / 腾讯云（国内访问快）
 1. 买云服务器（2核4G 约 100 元/月）
