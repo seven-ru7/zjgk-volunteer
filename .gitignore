@@ -1,0 +1,18 @@
+# 忽略打包/临时文件
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# 临时爬虫文件
+data/_crawled/*.pdf
+data/_crawled/*.xls
+data/_crawled/cookies.txt
+
+# 用户导出
+data/exports/
+*.log
+
+# 打包产物
+*.zip
+*.tar.gz
