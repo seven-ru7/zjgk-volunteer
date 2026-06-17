@@ -1,0 +1,60 @@
+name: Check 2026 Data Updates
+
+on:
+  schedule:
+    # 每天北京时间 9:00 (UTC 1:00) 跑一次
+    - cron: '0 1 * * *'
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  check-and-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Check for 2026 data
+        id: check
+        run: |
+          python scripts/check_2026_updates.py
+          echo "ready_to_crawl=$(jq -r '.ready_to_crawl' data/_crawled/2026_check_status.json)" >> $GITHUB_OUTPUT
+
+      - name: Auto-update 2026 data
+        if: steps.check.outputs.ready_to_crawl == 'true'
+        run: |
+          python scripts/auto_update_2026.py
+
+      - name: Commit and push
+        if: steps.check.outputs.ready_to_crawl == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ scripts/
+          git diff --staged --quiet || git commit -m "chore: auto-update 2026 高考数据 [$(date +%Y-%m-%d)]"
+          git push
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create issue if data is available
+        if: steps.check.outputs.ready_to_crawl == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const today = new Date().toISOString().slice(0, 10);
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🎯 2026 浙江高考数据已自动抓取 (${today})`,
+              body: 'GitHub Action 已自动从 zjzs.net 抓取并合并 2026 真实数据。\n\nStreamlit Cloud 正在自动重新部署。',
+              labels: ['data-update', '2026']
+            });

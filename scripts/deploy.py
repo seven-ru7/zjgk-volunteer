@@ -18,7 +18,7 @@ ROOT = Path("D:/Users/LLM Wiki/Workspace/zjgk-volunteer")
 # ============================================
 # ⚠️ 改成你的 GitHub 用户名！
 # ============================================
-GITHUB_USERNAME = "YOUR_GITHUB_USERNAME"
+GITHUB_USERNAME = "seven-ru7"
 REPO_NAME = "zjgk-volunteer"
 REMOTE_URL = f"https://github.com/{GITHUB_USERNAME}/{REPO_NAME}.git"
 

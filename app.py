@@ -5,6 +5,7 @@
 from __future__ import annotations
 
 import io
+import json
 from pathlib import Path
 
 import pandas as pd
@@ -83,6 +84,24 @@ else:
         f"⚠ **演示数据** · 仅 {data_count} 个专业 · 点击侧边栏「🕷️ 数据更新」可抓取真实数据",
         icon="🟡",
     )
+
+# 2026 数据待发布提示
+status_path = Path("data/_crawled/2026_check_status.json")
+if status_path.exists():
+    try:
+        status = json.loads(status_path.read_text(encoding="utf-8"))
+        check_time = status.get("check_time", "")[:10]
+        found = status.get("found", {})
+        any_2026 = any(found.values())
+        if not any_2026:
+            st.info(
+                f"⏰ **2026 真实数据待发布** · 上次检查 {check_time} · "
+                f"预计：分数段表 6/25-26、投档 7/中下旬 · "
+                f"系统已配置 GitHub Action 每天 9:00 自动检测",
+                icon="🕐",
+            )
+    except Exception:
+        pass
 
 
 # ====== 侧边栏：考生信息录入 ======

@@ -1,13 +1,11 @@
-# 忽略打包/临时文件
-__pycache__/
-*.py[cod]
-.pytest_cache/
-.venv/
-
-# 临时爬虫文件
+# GitHub Actions 自动备份
+data/_crawled/2026_check_status.json
 data/_crawled/*.pdf
 data/_crawled/*.xls
 data/_crawled/cookies.txt
+data/_crawled/col155_page1.html
+data/_crawled/real_admission_*.json
+data/_crawled/admission_*.json
 
 # 用户导出
 data/exports/
