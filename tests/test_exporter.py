@@ -3,9 +3,11 @@ import pathlib
 
 import pandas as pd
 import pytest
+import openpyxl
 
 from src.exporter import (
     to_dataframe, to_excel, to_csv,
+    to_excel_multi_sheet, get_institution_card_data,
     make_sparkline, compute_trend,
 )
 from src.models import Recommendation, Program
@@ -151,3 +153,79 @@ class TestToCsv:
         assert "A大学" in content
         assert "75%" in content
         assert "3年趋势" in content
+
+
+class TestToExcelMultiSheet:
+    def test_creates_4_sheets(self, tmp_path):
+        recs = [
+            make_rec("R1", "CS", "A", "冲", 0.45, 5000),
+            make_rec("R2", "SE", "B", "冲", 0.45, 4000),
+            make_rec("S1", "Math", "C", "稳", 0.75, 0),
+            make_rec("S2", "Phys", "D", "稳", 0.75, 1000),
+            make_rec("S3", "Chem", "E", "稳", 0.75, -1000),
+            make_rec("P1", "Ag", "F", "保", 0.95, -10000),
+        ]
+        candidate = {
+            "score": 620, "rank": 32114,
+            "subjects": ["物理", "化学", "生物"],
+            "cities": [], "keywords": [],
+        }
+        out = to_excel_multi_sheet(recs, tmp_path / "multi.xlsx", candidate=candidate)
+        assert out.exists()
+        assert out.stat().st_size > 0
+
+        wb = openpyxl.load_workbook(out)
+        # 应有 4 个 sheet：摘要 + 冲 + 稳 + 保
+        assert len(wb.sheetnames) == 4
+        assert any("摘要" in s for s in wb.sheetnames)
+        assert any("冲档" in s for s in wb.sheetnames)
+        assert any("稳档" in s for s in wb.sheetnames)
+        assert any("保档" in s for s in wb.sheetnames)
+
+    def test_summary_contains_candidate_info(self, tmp_path):
+        recs = [make_rec("S1", "Math", "C", "稳", 0.75, 0)]
+        candidate = {
+            "score": 620, "rank": 32114,
+            "subjects": ["物理", "化学", "生物"],
+            "cities": ["杭州"], "keywords": ["计算机"],
+        }
+        out = to_excel_multi_sheet(recs, tmp_path / "test.xlsx", candidate=candidate)
+        wb = openpyxl.load_workbook(out)
+        summary = wb["📊 摘要"]
+        # 检查考生分数、位次、选科、偏好都写入
+        text = "\n".join(str(c.value) for row in summary.iter_rows() for c in row if c.value)
+        assert "620" in text
+        assert "32,114" in text
+        assert "物理" in text
+        assert "杭州" in text
+        assert "计算机" in text
+
+
+class TestInstitutionCard:
+    def test_stability_stable(self):
+        rec = make_rec("P", "CS", "A大学", "稳", 0.75, 0, history=[
+            {"year": 2025, "min_rank": 12000, "min_score": 632},
+            {"year": 2024, "min_rank": 11800, "min_score": 638},
+            {"year": 2023, "min_rank": 11500, "min_score": 640},
+        ])
+        card = get_institution_card_data(rec.program)
+        assert card["stability"] == "稳定"
+        assert card["cv"] < 0.10
+
+    def test_stability_volatile(self):
+        rec = make_rec("P", "CS", "A大学", "稳", 0.75, 0, history=[
+            {"year": 2025, "min_rank": 8000, "min_score": 670},
+            {"year": 2024, "min_rank": 15000, "min_score": 620},
+            {"year": 2023, "min_rank": 50000, "min_score": 580},
+        ])
+        card = get_institution_card_data(rec.program)
+        assert "波动" in card["stability"]
+
+    def test_3y_min_score(self):
+        rec = make_rec("P", "CS", "A大学", "稳", 0.75, 0)
+        card = get_institution_card_data(rec.program)
+        assert len(card["min_score_3y"]) == 3
+        # 应该是 (分数, 位次) 元组列表
+        for score, rank in card["min_score_3y"]:
+            assert isinstance(score, int)
+            assert isinstance(rank, int)

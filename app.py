@@ -14,7 +14,10 @@ import streamlit as st
 from src.crawlers.score_rank import ScoreRankCrawler
 from src.crawlers.admission_pdf import AdmissionPdfCrawler
 from src.data_loader import load_score_rank, load_programs
-from src.exporter import to_csv, to_dataframe, to_excel
+from src.exporter import (
+    to_csv, to_dataframe, to_excel,
+    to_excel_multi_sheet, get_institution_card_data,
+)
 from src.models import Candidate
 from src.rank_lookup import score_to_rank
 from src.recommender import recommend, summary
@@ -292,17 +295,30 @@ if recs:
     output_dir = Path("data/exports")
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    candidate_info = {
+        "score": cand.score,
+        "rank": cand.rank,
+        "subjects": cand.selected_subjects,
+        "cities": cities,
+        "keywords": keywords,
+    }
+
     with e1:
-        # Excel 导出到 buffer → download_button
+        # 多 Sheet Excel（推荐！）
         buf = io.BytesIO()
-        df.to_excel(buf, index=False, engine="openpyxl")
+        # 先写文件再读
+        tmp_path = output_dir / f"志愿表_{cand.score}分_多sheet.xlsx"
+        to_excel_multi_sheet(recs, tmp_path, candidate=candidate_info)
+        with open(tmp_path, "rb") as f:
+            buf.write(f.read())
         buf.seek(0)
         st.download_button(
-            "📊 下载 Excel",
+            "📊 多 Sheet Excel（推荐）",
             data=buf.getvalue(),
-            file_name=f"志愿表_{cand.score}分.xlsx",
+            file_name=f"志愿表_{cand.score}分_多sheet.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
             use_container_width=True,
+            help="包含「摘要 + 冲档 + 稳档 + 保档」4 个 Sheet",
         )
 
     with e2:
@@ -321,7 +337,41 @@ if recs:
         if st.button("💾 保存到本地 data/exports/", use_container_width=True):
             xlsx_path = to_excel(recs, output_dir / f"志愿表_{cand.score}分.xlsx")
             csv_path = to_csv(recs, output_dir / f"志愿表_{cand.score}分.csv")
-            st.success(f"✓ 已保存：\n- {xlsx_path}\n- {csv_path}")
+            multi_path = to_excel_multi_sheet(recs, output_dir / f"志愿表_{cand.score}分_多sheet.xlsx", candidate=candidate_info)
+            st.success(f"✓ 已保存 3 个文件：\n- {xlsx_path.name}\n- {csv_path.name}\n- {multi_path.name}")
+
+    # 学校详情卡片（点击展开查看院校详情）
+    with st.expander("🎓 学校详情卡片（点击展开每个志愿）", expanded=False):
+        st.caption("展示每个志愿的 3 年稳定性、趋势、历年分数等详细信息")
+        # 用 3 列网格展示，每列 1 个志愿
+        cols_per_row = 3
+        for i in range(0, len(recs), cols_per_row):
+            cols = st.columns(cols_per_row)
+            for j, r in enumerate(recs[i:i + cols_per_row]):
+                with cols[j]:
+                    p = r.program
+                    card = get_institution_card_data(p)
+                    tier_emoji = {"冲": "🔴", "稳": "🟡", "保": "🟢"}[r.tier]
+                    prob = f"{r.probability * 100:.0f}%"
+
+                    with st.container(border=True):
+                        st.markdown(f"**{i+j+1}. {tier_emoji} {p.institution[:18]}**")
+                        st.caption(f"{p.name[:25]}{'...' if len(p.name) > 25 else ''}")
+                        st.markdown(f"**{card['sparkline']}** &nbsp; {card['trend']['direction']}")
+                        if r.tier == "冲":
+                            prob_color = "🔴"
+                        elif r.tier == "稳":
+                            prob_color = "🟡"
+                        else:
+                            prob_color = "🟢"
+                        st.markdown(f"{prob_color} 概率 **{prob}** · {card['stability']}")
+                        if card['min_score_3y']:
+                            with st.expander("📊 3 年数据", expanded=False):
+                                st.caption(f"稳定性 CV: {card['cv']:.1%}")
+                                for score, rank in card['min_score_3y']:
+                                    st.write(f"  - {score} 分 / 位次 {rank:,}")
+                        # 显示城市 + 学费
+                        st.caption(f"📍 {p.city or '—'} · 💰 {p.tuition}元/年")
 
     # ===== 趋势分析 section =====
     st.divider()
