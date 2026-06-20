@@ -1,0 +1,1398 @@
+{
+  "北京大学": {
+    "tags": [
+      "双一流",
+      "985",
+      "211",
+      "C9"
+    ],
+    "first_class_majors": [
+      "哲学",
+      "经济学",
+      "法学",
+      "政治学",
+      "社会学",
+      "马克思主义理论",
+      "中国语言文学",
+      "外国语言文学",
+      "新闻传播学",
+      "考古学",
+      "中国史",
+      "世界史",
+      "数学",
+      "物理学",
+      "化学",
+      "地理学",
+      "地质学",
+      "生物学",
+      "生态学",
+      "统计学",
+      "力学",
+      "电子科学与技术",
+      "信息与通信工程",
+      "计算机科学与技术",
+      "环境科学与工程",
+      "软件工程",
+      "基础医学",
+      "临床医学",
+      "口腔医学",
+      "公共卫生与预防医学",
+      "药学",
+      "护理学",
+      "工商管理",
+      "公共管理",
+      "心理学"
+    ],
+    "strong_majors": [
+      "文",
+      "理",
+      "医",
+      "法学"
+    ],
+    "postgraduate_rate": "约 45%",
+    "employment_rate": "约 97%"
+  },
+  "中国人民大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "经济学",
+      "法学",
+      "新闻",
+      "工商管理"
+    ],
+    "postgraduate_rate": "约 30%",
+    "employment_rate": "约 95%"
+  },
+  "清华大学": {
+    "tags": [
+      "双一流",
+      "985",
+      "211",
+      "C9"
+    ],
+    "first_class_majors": [
+      "数学",
+      "物理学",
+      "化学",
+      "生物学",
+      "力学",
+      "材料科学与工程",
+      "动力工程及工程热物理",
+      "电气工程",
+      "信息与通信工程",
+      "控制科学与工程",
+      "计算机科学与技术",
+      "建筑学",
+      "土木工程",
+      "水利工程",
+      "化学工程与技术",
+      "核科学与技术",
+      "环境科学与工程",
+      "生物医学工程",
+      "城乡规划学",
+      "风景园林学",
+      "管理科学与工程",
+      "工商管理",
+      "公共管理",
+      "设计学",
+      "电子科学与技术",
+      "法学",
+      "马克思主义理论",
+      "新闻传播学",
+      "中国语言文学",
+      "外国语言文学",
+      "考古学",
+      "中国史",
+      "世界史",
+      "哲学",
+      "理论经济学",
+      "应用经济学",
+      "政治学",
+      "社会学",
+      "心理学"
+    ],
+    "strong_majors": [
+      "工科",
+      "计算机",
+      "电子",
+      "建筑",
+      "经管"
+    ],
+    "postgraduate_rate": "约 50%",
+    "employment_rate": "约 98%"
+  },
+  "北京交通大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "北京航空航天大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "航空航天",
+      "计算机",
+      "机械"
+    ],
+    "postgraduate_rate": "约 38%",
+    "employment_rate": "约 96%"
+  },
+  "北京理工大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "兵器",
+      "车辆",
+      "光电"
+    ],
+    "postgraduate_rate": "约 30%",
+    "employment_rate": "约 95%"
+  },
+  "北京科技大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "北京邮电大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "中国农业大学": {
+    "tags": [
+      "985",
+      "双一流",
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "北京林业大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 12-18%",
+    "employment_rate": "约 90-93%"
+  },
+  "北京中医药大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 92-96%"
+  },
+  "北京师范大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "教育",
+      "心理",
+      "中文"
+    ],
+    "postgraduate_rate": "约 28%",
+    "employment_rate": "约 94%"
+  },
+  "中国传媒大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "中央财经大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 92-96%"
+  },
+  "对外经济贸易大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 92-96%"
+  },
+  "北京外国语大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 12-18%",
+    "employment_rate": "约 88-93%"
+  },
+  "中国人民公安大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "中央民族大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "民族学",
+      "社会学",
+      "语言"
+    ],
+    "postgraduate_rate": "约 22%",
+    "employment_rate": "约 92%"
+  },
+  "中国政法大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 12-18%",
+    "employment_rate": "约 90-93%"
+  },
+  "华北电力大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "南开大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "数学",
+      "化学",
+      "经济"
+    ],
+    "postgraduate_rate": "约 28%",
+    "employment_rate": "约 94%"
+  },
+  "天津大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "化工",
+      "建筑",
+      "精密仪器"
+    ],
+    "postgraduate_rate": "约 26%",
+    "employment_rate": "约 94%"
+  },
+  "河北工业大学(天津)": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "华北电力大学(保定)": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "河北工业大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "中国石油大学(北京)": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "山西大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "太原理工大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "内蒙古大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "辽宁大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "大连理工大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "化工",
+      "力学",
+      "船舶"
+    ],
+    "postgraduate_rate": "约 25%",
+    "employment_rate": "约 94%"
+  },
+  "东北大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "冶金",
+      "控制",
+      "计算机"
+    ],
+    "postgraduate_rate": "约 22%",
+    "employment_rate": "约 93%"
+  },
+  "大连海事大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "吉林大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "化学",
+      "数学",
+      "医学",
+      "法学"
+    ],
+    "postgraduate_rate": "约 23%",
+    "employment_rate": "约 93%"
+  },
+  "延边大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "东北师范大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "哈尔滨工业大学": {
+    "tags": [
+      "双一流",
+      "985",
+      "211",
+      "C9"
+    ],
+    "first_class_majors": [
+      "力学",
+      "机械工程",
+      "材料科学与工程",
+      "控制科学与工程",
+      "计算机科学与技术",
+      "土木工程",
+      "环境科学与工程",
+      "化学工程与技术",
+      "物理学",
+      "数学",
+      "光学工程",
+      "仪器科学与技术",
+      "动力工程及工程热物理",
+      "电气工程",
+      "信息与通信工程",
+      "化学",
+      "生物学",
+      "工商管理",
+      "管理科学与工程"
+    ],
+    "strong_majors": [
+      "航天",
+      "机械",
+      "焊接",
+      "机器人"
+    ],
+    "postgraduate_rate": "约 30%",
+    "employment_rate": "约 95%"
+  },
+  "哈尔滨工程大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "东北农业大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 12-18%",
+    "employment_rate": "约 90-93%"
+  },
+  "东北林业大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 12-18%",
+    "employment_rate": "约 90-93%"
+  },
+  "复旦大学": {
+    "tags": [
+      "双一流",
+      "985",
+      "211",
+      "C9"
+    ],
+    "first_class_majors": [
+      "哲学",
+      "中国语言文学",
+      "中国史",
+      "数学",
+      "物理学",
+      "化学",
+      "生物学",
+      "电子科学与技术",
+      "基础医学",
+      "临床医学",
+      "公共卫生与预防医学",
+      "药学",
+      "工商管理",
+      "应用经济学",
+      "理论经济学",
+      "政治学",
+      "社会学",
+      "外国语言文学",
+      "新闻传播学",
+      "考古学",
+      "世界史",
+      "生态学",
+      "材料科学与工程",
+      "环境科学与工程",
+      "计算机科学与技术",
+      "公共管理",
+      "法学"
+    ],
+    "strong_majors": [
+      "文",
+      "理",
+      "医",
+      "新闻"
+    ],
+    "postgraduate_rate": "约 40%",
+    "employment_rate": "约 96%"
+  },
+  "同济大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "建筑",
+      "土木",
+      "汽车"
+    ],
+    "postgraduate_rate": "约 30%",
+    "employment_rate": "约 95%"
+  },
+  "上海交通大学": {
+    "tags": [
+      "双一流",
+      "985",
+      "211",
+      "C9"
+    ],
+    "first_class_majors": [
+      "数学",
+      "物理学",
+      "化学",
+      "生物学",
+      "机械工程",
+      "材料科学与工程",
+      "信息与通信工程",
+      "控制科学与工程",
+      "计算机科学与技术",
+      "土木工程",
+      "化学工程与技术",
+      "船舶与海洋工程",
+      "环境科学与工程",
+      "生物医学工程",
+      "基础医学",
+      "临床医学",
+      "口腔医学",
+      "公共卫生与预防医学",
+      "药学",
+      "工商管理",
+      "管理科学与工程",
+      "电子科学与技术",
+      "动力工程及工程热物理",
+      "信息与通信工程"
+    ],
+    "strong_majors": [
+      "工科",
+      "船舶",
+      "医学",
+      "电子"
+    ],
+    "postgraduate_rate": "约 40%",
+    "employment_rate": "约 97%"
+  },
+  "华东理工大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "东华大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "华东师范大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "教育",
+      "心理",
+      "中文"
+    ],
+    "postgraduate_rate": "约 26%",
+    "employment_rate": "约 94%"
+  },
+  "上海外国语大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 12-18%",
+    "employment_rate": "约 88-93%"
+  },
+  "上海财经大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 92-96%"
+  },
+  "上海大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "南京大学": {
+    "tags": [
+      "双一流",
+      "985",
+      "211",
+      "C9"
+    ],
+    "first_class_majors": [
+      "哲学",
+      "中国语言文学",
+      "外国语言文学",
+      "中国史",
+      "物理学",
+      "化学",
+      "天文学",
+      "地质学",
+      "生物学",
+      "计算机科学与技术",
+      "数学",
+      "材料科学与工程",
+      "电子科学与技术",
+      "化学工程与技术",
+      "工商管理",
+      "应用经济学",
+      "理论经济学",
+      "法学",
+      "社会学",
+      "新闻传播学",
+      "环境科学与工程",
+      "生态学",
+      "公共管理"
+    ],
+    "strong_majors": [
+      "文",
+      "理",
+      "天文",
+      "地理"
+    ],
+    "postgraduate_rate": "约 35%",
+    "employment_rate": "约 95%"
+  },
+  "东南大学": {
+    "tags": [
+      "985",
+      "双一流",
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "南京航空航天大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "南京理工大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "中国矿业大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "河海大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "江南大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "江苏大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "南京农业大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 12-18%",
+    "employment_rate": "约 90-93%"
+  },
+  "南京师范大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "中国药科大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 92-96%"
+  },
+  "南京邮电大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "苏州大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "浙江大学": {
+    "tags": [
+      "双一流",
+      "985",
+      "211",
+      "C9"
+    ],
+    "first_class_majors": [
+      "化学",
+      "生物学",
+      "生态学",
+      "力学",
+      "材料科学与工程",
+      "电子科学与技术",
+      "计算机科学与技术",
+      "光学工程",
+      "控制科学与工程",
+      "电气工程",
+      "信息与通信工程",
+      "软件工程",
+      "土木工程",
+      "化学工程与技术",
+      "农业工程",
+      "环境科学与工程",
+      "生物医学工程",
+      "食品科学与工程",
+      "基础医学",
+      "临床医学",
+      "药学",
+      "工商管理",
+      "管理科学与工程",
+      "农林经济管理",
+      "公共管理",
+      "数学",
+      "机械工程",
+      "动力工程及工程热物理",
+      "建筑学",
+      "中国语言文学",
+      "外国语言文学",
+      "法学",
+      "新闻传播学",
+      "设计学"
+    ],
+    "strong_majors": [
+      "工科",
+      "计算机",
+      "医学",
+      "农学"
+    ],
+    "postgraduate_rate": "约 35%",
+    "employment_rate": "约 96%"
+  },
+  "安徽大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "中国科学技术大学": {
+    "tags": [
+      "双一流",
+      "985",
+      "211",
+      "C9"
+    ],
+    "first_class_majors": [
+      "数学",
+      "物理学",
+      "化学",
+      "天文学",
+      "地球物理学",
+      "生物学",
+      "科学技术史",
+      "材料科学与工程",
+      "计算机科学与技术",
+      "核科学与技术",
+      "安全科学与工程",
+      "数学",
+      "物理学",
+      "化学",
+      "电子科学与技术",
+      "信息与通信工程",
+      "软件工程",
+      "管理科学与工程",
+      "统计学",
+      "力学"
+    ],
+    "strong_majors": [
+      "理科",
+      "计算机",
+      "量子",
+      "物理"
+    ],
+    "postgraduate_rate": "约 45%",
+    "employment_rate": "约 95%"
+  },
+  "合肥工业大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "厦门大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "化学",
+      "海洋",
+      "经济"
+    ],
+    "postgraduate_rate": "约 24%",
+    "employment_rate": "约 93%"
+  },
+  "福州大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "南昌大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "山东大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "数学",
+      "化学",
+      "医学"
+    ],
+    "postgraduate_rate": "约 22%",
+    "employment_rate": "约 93%"
+  },
+  "中国海洋大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "海洋",
+      "水产",
+      "食品"
+    ],
+    "postgraduate_rate": "约 22%",
+    "employment_rate": "约 93%"
+  },
+  "中国石油大学(华东)": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "郑州大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "河南大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "武汉大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "测绘",
+      "法学",
+      "新闻",
+      "生物学"
+    ],
+    "postgraduate_rate": "约 28%",
+    "employment_rate": "约 94%"
+  },
+  "华中科技大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "光电",
+      "机械",
+      "医学",
+      "计算机"
+    ],
+    "postgraduate_rate": "约 28%",
+    "employment_rate": "约 95%"
+  },
+  "中国地质大学(武汉)": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "武汉理工大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "华中农业大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 12-18%",
+    "employment_rate": "约 90-93%"
+  },
+  "湖北大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "中南财经政法大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 92-96%"
+  },
+  "湖南大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "土木",
+      "化学",
+      "机械"
+    ],
+    "postgraduate_rate": "约 22%",
+    "employment_rate": "约 93%"
+  },
+  "中南大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "冶金",
+      "材料",
+      "医学"
+    ],
+    "postgraduate_rate": "约 24%",
+    "employment_rate": "约 94%"
+  },
+  "湖南师范大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "中山大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "医学",
+      "商学",
+      "理学"
+    ],
+    "postgraduate_rate": "约 24%",
+    "employment_rate": "约 94%"
+  },
+  "暨南大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "华南理工大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "化工",
+      "轻工",
+      "建筑"
+    ],
+    "postgraduate_rate": "约 24%",
+    "employment_rate": "约 94%"
+  },
+  "华南师范大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "海南大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "广西大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "四川大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "口腔医学",
+      "华西医学",
+      "文学"
+    ],
+    "postgraduate_rate": "约 23%",
+    "employment_rate": "约 93%"
+  },
+  "重庆大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "建筑",
+      "机械",
+      "电气"
+    ],
+    "postgraduate_rate": "约 22%",
+    "employment_rate": "约 93%"
+  },
+  "西南交通大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "电子科技大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "电子",
+      "通信",
+      "计算机"
+    ],
+    "postgraduate_rate": "约 28%",
+    "employment_rate": "约 95%"
+  },
+  "西南财经大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 92-96%"
+  },
+  "四川农业大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 12-18%",
+    "employment_rate": "约 90-93%"
+  },
+  "贵州大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "云南大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "西藏大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "西北大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "西安交通大学": {
+    "tags": [
+      "双一流",
+      "985",
+      "211",
+      "C9"
+    ],
+    "first_class_majors": [
+      "力学",
+      "机械工程",
+      "材料科学与工程",
+      "动力工程及工程热物理",
+      "电气工程",
+      "信息与通信工程",
+      "控制科学与工程",
+      "计算机科学与技术",
+      "工商管理",
+      "管理科学与工程",
+      "化学",
+      "物理学",
+      "数学",
+      "电子科学与技术",
+      "化学工程与技术",
+      "生物医学工程",
+      "基础医学",
+      "临床医学",
+      "公共卫生与预防医学",
+      "药学",
+      "应用经济学",
+      "工商管理",
+      "管理科学与工程",
+      "马克思主义理论",
+      "法学"
+    ],
+    "strong_majors": [
+      "能动",
+      "机械",
+      "电气",
+      "管理"
+    ],
+    "postgraduate_rate": "约 30%",
+    "employment_rate": "约 95%"
+  },
+  "西北工业大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "航空航天",
+      "航海",
+      "材料"
+    ],
+    "postgraduate_rate": "约 28%",
+    "employment_rate": "约 95%"
+  },
+  "西安电子科技大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "西安建筑科技大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "西安理工大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "陕西师范大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "长安大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-25%",
+    "employment_rate": "约 92-95%"
+  },
+  "西北农林科技大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "农学",
+      "林学",
+      "园艺"
+    ],
+    "postgraduate_rate": "约 18%",
+    "employment_rate": "约 92%"
+  },
+  "兰州大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "strong_majors": [
+      "化学",
+      "草学",
+      "生态"
+    ],
+    "postgraduate_rate": "约 20%",
+    "employment_rate": "约 92%"
+  },
+  "青海大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "宁夏大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "新疆大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "石河子大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-22%",
+    "employment_rate": "约 90-94%"
+  },
+  "中国矿业大学(北京)": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "中国石油大学(北京)克拉玛依校区": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "中国地质大学(北京)": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "哈尔滨工业大学(威海)": {
+    "tags": [
+      "985",
+      "双一流",
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "中国人民大学(苏州校区)": {
+    "tags": [
+      "985",
+      "双一流",
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "山东大学威海分校": {
+    "tags": [
+      "985",
+      "双一流",
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "北京交通大学(威海校区)": {
+    "tags": [
+      "双一流",
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "哈尔滨工业大学(深圳)": {
+    "tags": [
+      "985",
+      "双一流",
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "电子科技大学(沙河校区)": {
+    "tags": [
+      "985",
+      "双一流",
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "国防科技大学": {
+    "tags": [
+      "985",
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  },
+  "海军军医大学": {
+    "tags": [
+      "211"
+    ],
+    "postgraduate_rate": "约 15-20%",
+    "employment_rate": "约 90-93%"
+  }
+}
