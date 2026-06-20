@@ -78,10 +78,12 @@ def recommend(
         else:
             safe.append(rec)
 
-    # 3. 组内排序：冲档按概率降序，其他档按 delta_rank 升序（位次越接近考生越准）
+    # 3. 组内排序：
+#    - 冲档：概率降序，delta_rank 升序（位次越接近考生越好）
+#    - 稳/保档：|delta_rank| 升序（位次最接近考生位次的最匹配）
     rush.sort(key=lambda r: (-r.probability, r.delta_rank))
-    stable.sort(key=lambda r: (r.delta_rank, -r.probability))
-    safe.sort(key=lambda r: (r.delta_rank, -r.probability))
+    stable.sort(key=lambda r: (abs(r.delta_rank), -r.probability))
+    safe.sort(key=lambda r: (abs(r.delta_rank), -r.probability))
 
     # 4. 按 ratio 分配名额
     n_rush = int(top_n * ratio[0])
