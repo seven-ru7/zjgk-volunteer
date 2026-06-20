@@ -52878,5 +52878,253 @@
     "year": 2023,
     "min_rank": 32707,
     "min_score": 621
+  },
+  {
+    "program_id": "P02852",
+    "institution": "中国人民大学(苏州校区)",
+    "program": "国民经济管理(中外合作办学)(统计与数据治理方向)",
+    "year": 2025,
+    "min_rank": 7317,
+    "min_score": 659
+  },
+  {
+    "program_id": "P02853",
+    "institution": "中国人民大学(苏州校区)",
+    "program": "金融学(中外合作办学)",
+    "year": 2025,
+    "min_rank": 7471,
+    "min_score": 658
+  },
+  {
+    "program_id": "P02854",
+    "institution": "中国人民大学(苏州校区)",
+    "program": "人力资源管理(中外合作办学)",
+    "year": 2025,
+    "min_rank": 7723,
+    "min_score": 658
+  },
+  {
+    "program_id": "P02855",
+    "institution": "中国人民大学(苏州校区)",
+    "program": "传播学(中外合作办学)(国际传播方向)",
+    "year": 2025,
+    "min_rank": 6982,
+    "min_score": 660
+  },
+  {
+    "program_id": "P02856",
+    "institution": "中国人民大学(苏州校区)",
+    "program": "数学与应用数学(中外合作办学)(人大与索邦)",
+    "year": 2025,
+    "min_rank": 8194,
+    "min_score": 656
+  },
+  {
+    "program_id": "P02857",
+    "institution": "中国人民大学(苏州校区)",
+    "program": "数据科学与大数据技术(AI与智慧治理方向)",
+    "year": 2025,
+    "min_rank": 3944,
+    "min_score": 669
+  },
+  {
+    "program_id": "P02858",
+    "institution": "哈尔滨工业大学(威海)",
+    "program": "工科试验班(AI加先进技术领军班)",
+    "year": 2025,
+    "min_rank": 8329,
+    "min_score": 656
+  },
+  {
+    "program_id": "P02859",
+    "institution": "哈尔滨工业大学(威海)",
+    "program": "工科试验班(机器人与智能装备拔尖班)",
+    "year": 2025,
+    "min_rank": 7453,
+    "min_score": 658
+  },
+  {
+    "program_id": "P02860",
+    "institution": "哈尔滨工业大学(威海)",
+    "program": "船舶与海洋工程(中外合作办学)",
+    "year": 2025,
+    "min_rank": 13236,
+    "min_score": 646
+  },
+  {
+    "program_id": "P02861",
+    "institution": "哈尔滨工业大学(威海)",
+    "program": "智能材料与结构(中外合作办学)",
+    "year": 2025,
+    "min_rank": 15181,
+    "min_score": 642
+  },
+  {
+    "program_id": "P02862",
+    "institution": "哈尔滨工业大学(深圳)",
+    "program": "工科试验班(计算机与电子通信)",
+    "year": 2025,
+    "min_rank": 3791,
+    "min_score": 669
+  },
+  {
+    "program_id": "P02863",
+    "institution": "哈尔滨工业大学(深圳)",
+    "program": "通信工程(中外合作办学)",
+    "year": 2025,
+    "min_rank": 9192,
+    "min_score": 654
+  },
+  {
+    "program_id": "P02864",
+    "institution": "山东大学威海分校",
+    "program": "经济学类",
+    "year": 2025,
+    "min_rank": 9328,
+    "min_score": 654
+  },
+  {
+    "program_id": "P02865",
+    "institution": "山东大学威海分校",
+    "program": "中国语言文学类",
+    "year": 2025,
+    "min_rank": 8572,
+    "min_score": 656
+  },
+  {
+    "program_id": "P02866",
+    "institution": "山东大学威海分校",
+    "program": "法学类",
+    "year": 2025,
+    "min_rank": 7123,
+    "min_score": 659
+  },
+  {
+    "program_id": "P02867",
+    "institution": "山东大学威海分校",
+    "program": "外国语言文学类",
+    "year": 2025,
+    "min_rank": 10239,
+    "min_score": 652
+  },
+  {
+    "program_id": "P02868",
+    "institution": "山东大学威海分校",
+    "program": "电子信息类(智能工程新工科实验班)",
+    "year": 2025,
+    "min_rank": 9682,
+    "min_score": 653
+  },
+  {
+    "program_id": "P02869",
+    "institution": "山东大学威海分校",
+    "program": "数学类",
+    "year": 2025,
+    "min_rank": 9063,
+    "min_score": 654
+  },
+  {
+    "program_id": "P02870",
+    "institution": "山东大学威海分校",
+    "program": "物理学类",
+    "year": 2025,
+    "min_rank": 10712,
+    "min_score": 651
+  },
+  {
+    "program_id": "P02871",
+    "institution": "山东大学威海分校",
+    "program": "海洋科学类",
+    "year": 2025,
+    "min_rank": 15990,
+    "min_score": 641
+  },
+  {
+    "program_id": "P02872",
+    "institution": "电子科技大学(沙河校区)",
+    "program": "电子信息类(中外合作办学)(通信、微电子)",
+    "year": 2025,
+    "min_rank": 9114,
+    "min_score": 654
+  },
+  {
+    "program_id": "P02873",
+    "institution": "电子科技大学(沙河校区)",
+    "program": "电子信息类(中外合作办学)(电子信息)",
+    "year": 2025,
+    "min_rank": 9356,
+    "min_score": 654
+  },
+  {
+    "program_id": "P02874",
+    "institution": "电子科技大学(沙河校区)",
+    "program": "电子信息类(中外合作办学)(海南陵水国际教育创新区)",
+    "year": 2025,
+    "min_rank": 11802,
+    "min_score": 648
+  },
+  {
+    "program_id": "P02875",
+    "institution": "电子科技大学(沙河校区)",
+    "program": "临床医学",
+    "year": 2025,
+    "min_rank": 12237,
+    "min_score": 648
+  },
+  {
+    "program_id": "P02876",
+    "institution": "电子科技大学(沙河校区)",
+    "program": "软件工程(AI交叉复合型创新人才培养实验班)",
+    "year": 2025,
+    "min_rank": 5777,
+    "min_score": 663
+  },
+  {
+    "program_id": "P02877",
+    "institution": "电子科技大学(沙河校区)",
+    "program": "软件工程(国家卓越工程师教育培养计划特色班)",
+    "year": 2025,
+    "min_rank": 5912,
+    "min_score": 662
+  },
+  {
+    "program_id": "P02878",
+    "institution": "北京交通大学(威海校区)",
+    "program": "通信工程(中外合作办学)",
+    "year": 2025,
+    "min_rank": 19020,
+    "min_score": 636
+  },
+  {
+    "program_id": "P02879",
+    "institution": "北京交通大学(威海校区)",
+    "program": "计算机科学与技术(中外合作办学)",
+    "year": 2025,
+    "min_rank": 17530,
+    "min_score": 638
+  },
+  {
+    "program_id": "P02880",
+    "institution": "北京交通大学(威海校区)",
+    "program": "环境工程(中外合作办学)",
+    "year": 2025,
+    "min_rank": 37466,
+    "min_score": 614
+  },
+  {
+    "program_id": "P02881",
+    "institution": "北京交通大学(威海校区)",
+    "program": "工商管理(中外合作办学)",
+    "year": 2025,
+    "min_rank": 21321,
+    "min_score": 633
+  },
+  {
+    "program_id": "P02882",
+    "institution": "北京交通大学(威海校区)",
+    "program": "会计学(中外合作办学)",
+    "year": 2025,
+    "min_rank": 19758,
+    "min_score": 635
   }
 ]
