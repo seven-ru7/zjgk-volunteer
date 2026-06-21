@@ -1,14 +1,17 @@
 """
 一键推送到 GitHub + 部署到 Streamlit Cloud 的引导脚本。
 
+⚠️ 安全提示：token 不要在聊天中明文发送！
+推荐做法：
+1. 撤销旧 token（https://github.com/settings/tokens）
+2. 生成新 token（PAT，勾选 repo）
+3. 复制到本地文件（不发送）：
+   echo "https://七-ru7:<TOKEN>@github.com" > .git-credentials
+   chmod 600 .git-credentials
+4. 运行本脚本
+
 用法：
-1. 在 GitHub 创建空仓库：https://github.com/new
-   - 名称：zjgk-volunteer
-   - 可见性：Public（Streamlit Cloud 免费版要求）
-   - 不要勾选 Add README / .gitignore / license（用我们本地的）
-2. 替换下面的 GITHUB_USERNAME 为你的 GitHub 用户名
-3. 运行：python scripts/deploy.py
-4. 推送成功后访问 https://share.streamlit.io 完成部署
+    python scripts/deploy.py
 """
 import subprocess
 from pathlib import Path
@@ -16,19 +19,17 @@ from pathlib import Path
 ROOT = Path("D:/Users/LLM Wiki/Workspace/zjgk-volunteer")
 
 # ============================================
-# ⚠️ 改成你的 GitHub 用户名！
-# ============================================
 GITHUB_USERNAME = "seven-ru7"
 REPO_NAME = "zjgk-volunteer"
-REMOTE_URL = f"https://github.com/{GITHUB_USERNAME}/{REPO_NAME}.git"
 
 
-def run(cmd, cwd=None, check=True, show=True):
+def run(cmd, cwd=None, check=True, show=True, env=None):
     if show:
         print(f"\n$ {cmd}")
     result = subprocess.run(
         cmd, shell=True, cwd=cwd or ROOT,
-        capture_output=True, text=True, encoding="utf-8"
+        capture_output=True, text=True, encoding="utf-8",
+        env=env
     )
     if result.stdout and show:
         print(result.stdout)
@@ -40,74 +41,76 @@ def run(cmd, cwd=None, check=True, show=True):
 
 
 def main():
-    if GITHUB_USERNAME == "YOUR_GITHUB_USERNAME":
-        print("=" * 60)
-        print("❌ 请先编辑 scripts/deploy.py")
-        print(f"   把 GITHUB_USERNAME 改为你的 GitHub 用户名")
-        print("=" * 60)
-        return
-
     print("=" * 60)
     print(f"  部署 {REPO_NAME} 到 GitHub + Streamlit Cloud")
     print("=" * 60)
-    print(f"GitHub: {REMOTE_URL}")
 
-    # 1. 检查 remote
+    import os
+    token = os.environ.get("GITHUB_TOKEN")
+    cred_file = ROOT / ".git-credentials"
+
+    # 1. 检查 token
+    if not token and not cred_file.exists():
+        print("\n❌ 未找到 GITHUB_TOKEN")
+        print("\n推荐做法（避免在聊天中泄露 token）：")
+        print(f"  1. 在 GitHub 生成新 token：https://github.com/settings/tokens/new")
+        print(f"     - Note: zjgk-deploy")
+        print(f"     - 勾选 ✅ repo")
+        print(f"  2. 把 token 保存到本地文件（不发给 AI 助手）：")
+        print(f'     echo "https://{GITHUB_USERNAME}:<新TOKEN>@github.com" > "{cred_file}"')
+        print(f'     chmod 600 "{cred_file}"')
+        print(f"  3. 重跑本脚本")
+        print(f"\n或者用环境变量：")
+        print(f"     export GITHUB_TOKEN=新TOKEN值")
+        print(f"     python scripts/deploy.py")
+        return
+
+    if token:
+        print("\n✓ 使用环境变量 GITHUB_TOKEN（安全）")
+        remote_url = f"https://{GITHUB_USERNAME}:{token}@github.com/{GITHUB_USERNAME}/{REPO_NAME}.git"
+    else:
+        print("\n✓ 使用 .git-credentials 文件（安全）")
+        remote_url = f"https://github.com/{GITHUB_USERNAME}/{REPO_NAME}.git"
+        run(f'git config --local credential.helper "store --file=.git-credentials"')
+
+    # 2. 检查 remote
     result = run("git remote -v", show=False)
-    if REMOTE_URL in result.stdout:
+    if f"{GITHUB_USERNAME}/{REPO_NAME}" in result.stdout:
         print("✓ Remote 已存在")
     else:
-        print("\n[1/3] 添加 remote...")
-        run(f"git remote add origin {REMOTE_URL}")
-        print("✓ Remote 已添加")
+        run(f"git remote add origin {remote_url}")
 
-    # 2. 推送到 GitHub
-    print("\n[2/3] 推送到 GitHub...")
-    print("    (首次推送会要求输入 GitHub 凭据)")
-    print("    推荐用 Personal Access Token (PAT)")
+    # 3. 推送
+    print("\n推送代码到 GitHub...")
     result = run("git push -u origin main", check=False)
 
     if result.returncode == 0:
         print("\n✓ 推送成功！")
     else:
         if "could not read Username" in result.stderr or "Authentication failed" in result.stderr:
-            print("\n❌ 认证失败。请按以下步骤：")
-            print("1. 访问 https://github.com/settings/tokens")
-            print("2. 生成 Token（勾选 repo 权限）")
-            print("3. 用 token 替换 URL：")
-            print(f"   https://YOUR_TOKEN@github.com/{GITHUB_USERNAME}/{REPO_NAME}.git")
-            print("\n或者配置 SSH key：")
-            print("   ssh-keygen -t ed25519")
-            print("   cat ~/.ssh/id_ed25519.pub  # 复制到 GitHub Settings > SSH keys")
+            print("\n❌ 认证失败。请检查 token 是否有效。")
             return
         else:
-            print("\n❌ 推送失败，请检查上方错误信息")
+            print("\n❌ 推送失败：", result.stderr)
             return
 
-    # 3. 引导 Streamlit Cloud
+    # 4. 清理：恢复 remote URL（移除 token）
+    if token:
+        clean_url = f"https://github.com/{GITHUB_USERNAME}/{REPO_NAME}.git"
+        run(f"git remote set-url origin {clean_url}")
+        print("\n✓ 已清理 remote URL（移除 token）")
+
+    # 5. 引导
     print("\n" + "=" * 60)
     print("  接下来：Streamlit Cloud 部署")
     print("=" * 60)
     print(f"""
-1. 访问 https://share.streamlit.io/
-2. 用 GitHub 账号登录
-3. 点击 "New app"
-4. 填写：
-   - Repository: {GITHUB_USERNAME}/{REPO_NAME}
-   - Branch: main
-   - Main file path: app.py
-   - App URL: 自定义（如 zjgk-volunteer）
-5. 点击 "Deploy!"
-6. 等待 3-5 分钟构建
-7. 完成后会得到：https://zjgk-volunteer.streamlit.app
+1. 访问 https://share.streamlit.io/{GITHUB_USERNAME}/{REPO_NAME}
+2. 或手动 Reboot app（如果已部署）
+3. 等待 1-3 分钟重新部署完成
 
-部署后如果报错：
-- 查看 logs（多半是依赖或路径问题）
-- 我的 .python-version 已锁定 3.11
-- requirements.txt 列了所有包
-- 第一次部署失败时 logs 末尾会显示具体错误
-
-✅ 部署完成后把 URL 分享给任何人即可访问！
+部署后访问：
+  https://{REPO_NAME}-<hash>.streamlit.app
 """)
 
 

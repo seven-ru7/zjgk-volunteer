@@ -356,14 +356,30 @@ if recs:
 
     # 学校详情卡片（点击展开查看院校详情）
         with st.expander("🎓 学校详情卡片（点击展开每个志愿）", expanded=False):
-            st.caption("展示每个志愿的 3 年稳定性、趋势、历年分数等详细信息")
+            st.caption("每个志愿的院校标签、强势学科、保研/就业率等详情")
+
+            # 按 tier 筛选
+            tier_filter = st.radio(
+                "筛选层次：",
+                ["全部", "🔴 冲", "🟡 稳", "🟢 保"],
+                horizontal=True,
+                key="tier_filter",
+            )
+            if tier_filter == "全部":
+                filtered_recs = recs
+            else:
+                t = tier_filter.split()[-1]
+                filtered_recs = [r for r in recs if r.tier == t]
+
+            st.caption(f"显示 **{len(filtered_recs)}** 个志愿")
+
             inst_details = get_institution_details()
 
-            # 用 3 列网格展示，每列 1 个志愿
-            cols_per_row = 3
-            for i in range(0, len(recs), cols_per_row):
+            # 2 列网格（窄屏更宽，避免拥挤）
+            cols_per_row = 2
+            for i in range(0, len(filtered_recs), cols_per_row):
                 cols = st.columns(cols_per_row)
-                for j, r in enumerate(recs[i:i + cols_per_row]):
+                for j, r in enumerate(filtered_recs[i:i + cols_per_row]):
                     with cols[j]:
                         p = r.program
                         card = get_institution_card_data(p)
@@ -372,48 +388,60 @@ if recs:
                         prob = f"{r.probability * 100:.0f}%"
 
                         with st.container(border=True):
-                            # 标题 + 标签（985/211/双一流）
+                            # 第 1 行：序号 + tier + 院校
+                            st.markdown(
+                                f"**{i+j+1}. {tier_emoji} {p.institution}**",
+                                help=p.name
+                            )
+                            # 第 2 行：tier 标签徽章（紧凑）
                             tags_html = " ".join(
-                                f'<span style="background:#{"c00" if t=="985" else "06c" if t=="211" else "060" if "双一流" in t else "666"};color:white;padding:2px 6px;border-radius:3px;font-size:11px;margin-right:2px">{t}</span>'
+                                f'<span style="background:#{"c00" if t=="985" else "06c" if t=="211" else "060" if "双一流" in t else "666"};color:white;padding:1px 6px;border-radius:3px;font-size:10px;margin-right:2px;font-weight:bold">{t}</span>'
                                 for t in detail.get("tags", [])[:4]
                             )
-                            st.markdown(
-                                f"**{i+j+1}. {tier_emoji} {p.institution[:18]}** "
-                                f"<br>{tags_html}",
-                                unsafe_allow_html=True,
-                            )
-                            st.caption(f"{p.name[:25]}{'...' if len(p.name) > 25 else ''}")
-                            st.markdown(f"**{card['sparkline']}** &nbsp; {card['trend']['direction']}")
-                            if r.tier == "冲":
-                                prob_color = "🔴"
-                            elif r.tier == "稳":
-                                prob_color = "🟡"
-                            else:
-                                prob_color = "🟢"
-                            st.markdown(f"{prob_color} 概率 **{prob}** · {card['stability']}")
-                            # 强势学科
-                            if detail.get("strong_majors"):
-                                majors_str = " · ".join(detail["strong_majors"][:4])
-                                st.markdown(f"🎯 **强项**: {majors_str}")
-                            # 双一流学科数
-                            if detail.get("first_class_majors"):
-                                n = len(detail["first_class_majors"])
-                                with st.popover(f"📚 双一流学科 ({n})", use_container_width=True):
-                                    st.markdown("**双一流建设学科：**")
-                                    st.write("、".join(detail["first_class_majors"]))
-                            # 保研率 + 就业率
+                            st.markdown(tags_html, unsafe_allow_html=True)
+
+                            # 第 3 行：核心数据（4 个指标一行）
                             postgrad = detail.get("postgraduate_rate", "—")
                             employ = detail.get("employment_rate", "—")
-                            if postgrad != "—":
-                                st.markdown(f"📊 **保研率**: {postgrad}　💼 **就业率**: {employ}")
-                            # 3 年数据
-                            if card['min_score_3y']:
-                                with st.expander("📈 3 年录取分", expanded=False):
+                            c1, c2 = st.columns(2)
+                            c1.metric("📊 保研", postgrad.replace("约 ", ""))
+                            c2.metric("💼 就业", employ.replace("约 ", ""))
+
+                            # 第 4 行：趋势 + 概率
+                            st.markdown(
+                                f"**{card['sparkline']}** &nbsp;{card['trend']['direction']} &nbsp;· "
+                                f"{tier_emoji} **{prob}** · {card['stability']}"
+                            )
+
+                            # 第 5 行：强项学科（精简）
+                            if detail.get("strong_majors"):
+                                majors_str = " · ".join(detail["strong_majors"][:3])
+                                st.markdown(f"🎯 {majors_str}")
+
+                            # 详情放 popover（点击展开，避免页面拥挤）
+                            with st.popover("📖 详细信息"):
+                                st.markdown(f"**{p.institution}** · {p.name}")
+                                st.markdown(f"📍 {p.city or '—'} · 💰 {p.tuition} 元/年 · ⏱️ {p.duration_years} 年")
+
+                                # 双一流学科
+                                if detail.get("first_class_majors"):
+                                    st.markdown("**📚 双一流学科：**")
+                                    st.write("、".join(detail["first_class_majors"]))
+                                else:
+                                    st.caption("未列入双一流学科")
+
+                                # 3 年录取分
+                                if card['min_score_3y']:
+                                    st.markdown("**📈 3 年录取分：**")
                                     st.caption(f"稳定性 CV: {card['cv']:.1%}")
                                     for score, rank in card['min_score_3y']:
                                         st.write(f"  • {score} 分 / 位次 {rank:,}")
-                            # 显示城市 + 学费
-                            st.caption(f"📍 {p.city or '—'} · 💰 {p.tuition}元/年")
+
+                                # 选科要求
+                                if p.required_subjects:
+                                    st.markdown(f"**📋 选考要求**：{'、'.join(p.required_subjects)}")
+                                else:
+                                    st.caption("📋 选考要求：不限")
 
     # ===== 趋势分析 section =====
     st.divider()
